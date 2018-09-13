@@ -1,0 +1,138 @@
+Title: Hawaii Indigency Calculator
+Author: Keli Chang
+Before:<link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
+<div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
+<h2 style="text-align:center;">Hawaii Indigency Calculator</h2>
+<p><b>This is a <a href="http://www.codingthelaw.org/">class project</a>. You should not rely on it as a source of legal information. It is likely incomplete.</b></p>
+<p>Answer the following questions to see if someone qualifies for appointment of counsel.</p>
+
+Q(1):Hi, we are going to figure out your indigent status for public defender services. GOTO:2
+
+Q(2):In order to qualify for indigent status, you must show that you are unable to obtain counsel without substantial financial hardship to yourself or your family.
+A: Sounds good
+	Q(2.1):GOTO:3
+
+Q(3):I will ask some questions to help determine your status.
+A: Yes, let's get started!
+	Q(3.1):GOTO:4
+
+Q(4):First, are you eligible or currently on food stamps (TANF)?
+A:Yes
+	Q(4.1):GOTO:Eligible
+A:No
+	Q(4.2):GOTO:House
+
+Q(House): Ok, how many people are in your household?
+A:1
+	Q(5.1):GOTO:H1
+A:2
+	Q(5.2):GOTO:H2
+A:3
+	Q(5.3):GOTO:H3
+A:4
+	Q(5.4):GOTO:H4
+A:5
+	Q(5.5):GOTO:H5
+A:6
+	Q(5.6):GOTO:H6
+A:7
+	Q(5.7):GOTO:H7
+A:8
+	Q(5.8):GOTO:H8
+
+Q(H1): Ok, is your annual income at or below $13,960?
+A:Yes
+	Q(6.1):GOTO:Eligible
+A:No
+	Q(6.2):GOTO:Unclear
+
+Q(H2): Ok, is your annual income at or below $18,930?
+A:Yes
+	Q(7.1):GOTO:Eligible
+A:No
+	Q(7.2):GOTO:Unclear
+
+Q(H3): Ok, is your annual income at or below $23,900?
+A:Yes
+	Q(8.1):GOTO:Eligible
+A:No
+	Q(8.2):GOTO:Unclear
+
+Q(H4): Ok, is your annual income at or below $28,870?
+A:Yes
+	Q(9.1):GOTO:Eligible
+A:No
+	Q(9.2):GOTO:Unclear
+
+Q(H5): Ok, is your annual income at or below $33,840?
+A:Yes
+	Q(10.1):GOTO:Eligible
+A:No
+	Q(10.2):GOTO:Unclear
+
+Q(H6): Ok, is your annual income at or below $38,810?
+A:Yes
+	Q(11.1):GOTO:Eligible
+A:No
+	Q(11.2):GOTO:Unclear
+
+Q(H7): Ok, is your annual income at or below $43,780?
+A:Yes
+	Q(12.1):GOTO:Eligible
+A:No
+	Q(12.2):GOTO:Unclear
+
+Q(H8): Ok, is your annual income at or below $48,750?
+A:Yes
+	Q(13.1):GOTO:Eligible
+A:No
+	Q(13.2):GOTO:Unclear
+
+Q(month):What are your fixed monthly expenditures? This includes rent, bills, groceries, automobile costs, etc.
+A:Under $500
+	Q(14.1):GOTO:assets
+A:Between $500-$1,000
+	Q(14.2):GOTO:assets
+A:More than $1,000
+	Q(14.3):GOTO:assets
+
+Q(assets):Do you have any additional assets like a car, ownership of property such as an apartment or home, or anything worth $1,000 or more?
+A:Yes
+	Q(15.1):Ok, then you could be ineligible but let’s ask more questions... GOTO:liability
+A:No
+	Q(15.2):Ok, then you could be eligible but let’s ask more questions... GOTO:liability
+
+Q(liability):Do you have any fixed liabilities such as debt?
+A:Yes
+	Q(16.1):GOTO:borrow
+A:No
+	Q(16.2):GOTO:borrow
+
+Q(borrow):How would you describe your borrowing capacity?
+A:Good
+	Q(17.1):Ok, then you could be ineligible but let’s ask one more question.
+	A:Sure! 
+		Q(17.1.1):GOTO:counsel
+A:Average
+	Q(17.2):Ok, then you could be ineligible but let’s ask one more question.
+	A:Sure! 
+		Q(17.2.1):GOTO:counsel
+A:Poor
+	Q(17.3):Ok, then you could be eligible but let’s ask one more question.
+	A:Sure! 
+		Q(17.3.1):GOTO:counsel
+
+Q(counsel):Have you already tried securing counsel for this matter?
+A:Yes
+	Q(18.1):GOTO:Final_Eligible
+A:No
+	Q(18.2):GOTO:Final_Uneligible
+
+Q(Eligible): You are eligible!
+Q(Unclear): Alright, so it is unclear of whether you qualify as indigent but I’ll ask you a few more questions to see if any extra information can help your status.
+A:Sure
+	Q(20.1):GOTO:month
+
+Q(Final_Eligible): Well it looks like you may be eligible but your status is in the grey area so you should speak with someone from Hawaii’s Public Defender’s office to help determine your status.
+Q(Final_Uneligible): Well it looks like you may be ineligible but your status is in the grey area so you should speak with someone from Hawaii’s Public Defender’s office to help determine your status.
+
