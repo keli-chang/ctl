@@ -1,0 +1,5 @@
+person_ID,Referal Soure,body_part_1,body_part_2,body_part_3,body_part_4,body_part_5,surgery,take,Time between injury and intake,Age: yrs
+548,648,Facebook,head,ankle,foot/feet,elbow,neck,yes,no,865 days 00:00:00.000000000,54.0
+572,672,Google,head,hands,neck,ankle,foot/feet,no,yes,272 days 00:00:00.000000000,-11.0
+775,875,website,eye,hands,neck,head,foot/feet,no,no,540 days 00:00:00.000000000,45.0
+1205,1305,website,neck,eye,head,hands,foot/feet,yes,no,1055 days 00:00:00.000000000,47.0
