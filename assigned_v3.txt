@@ -1,0 +1,53 @@
+Title: Hawaii Indigency Calculator
+Author: Keli Chang
+Before: <input type="hidden" name="name" value="Letter to Santa"/>
+<input type="hidden" name="docx_uri" value="https://github.com/keli-chang/ctl/blob/master/v3%20receipt.docx"/>
+
+<link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
+<div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
+<h2 style="text-align:center;">Hawaii Indigency Calculator</h2>
+<p><b>This is a <a href="http://www.codingthelaw.org/">class project</a>. You should not rely on it as a source of legal information. It is likely incomplete.</b></p>
+<p>Answer the following questions to see if someone qualifies for appointment of counsel.</p>
+After: 
+
+
+getvar= ('Inc'= "((13960+(4970<x>house</x>-4970))*(150%))");
+
+Q(name):Hello, what is your name?
+X:
+	Q(1.1):GOTO:2
+
+Q(2):Hi <x>name</x>, I will ask some questions to help determine your indigent status for public defender services.
+A: Yes, let's get started!
+	Q(2.1):GOTO:3
+
+Q(3):First, are you eligible or currently on food stamps (TANF)?
+A:Yes
+	Q(3.1):GOTO:TANF
+A:No
+	Q(3.2):GOTO:House
+
+Q(House): Ok, how many people are in your household?
+X:number
+	Q(income): Please state your household income.
+	X:number
+		Q(4.1.1): Is this less than or equal to $48,750?
+		A[javascript:if (fedpov(getvar('house'),getvar('income'),150)){ goto('poverty') } else if (fedpov(getvar('house'),getvar('income'),250)) { goto('qualbut') } else { goto('noqual') } ]:Yes
+			Q(4.1.1.1):GOTO:qualbut
+		A:No
+			Q(4.1.1.2):GOTO:noqual
+
+Q(qualbut): You probably qualify as indigent but able to contribute since you earn more than 150% of the poverty line. So you'll likely be assigned a lawyer and asked to pay a small fee. See <a href="https://www.lawserver.com/law/state/hawaii/hi-statutes/hawaii_statutes_802-6" target=_new>HRS 802-6</a>.
+A:Ok, anything else?
+	Q(5.1):GOTO:nomore
+
+Q(noqual): You probably won't qualify as indigent since you earn more than 150% of the poverty line. See <a href="https://www.lawserver.com/law/state/hawaii/hi-statutes/hawaii_statutes_802-4" target=_new>HRS 802-4</a>. So you'll probably need to hire an attorney. Would you like to search for one near you?
+A:[https://www.avvo.com/find-a-lawyer] Yes.
+	Q(6.1):GOTO:nomore
+A: No
+	Q(6.2):GOTO:nomore
+
+Q(TANF): You probably qualify as indigent because you receive public assistance. See <a href="file:///C:/Users/Keli/OneDrive/Law%20School/2018-2019/Coding%20the%20Law/gideon_2_assigned_counsel_%20financial_guidelines_noUnd_clr_map_pms5669_4162014-102.pdf" target=_new>Hawaii (page 30)</a> and <a href="http://publicdefender.hawaii.gov/clients/what-are-the-guidelines-for-determining-eligibility/" target=_new>Hawaii Public Defender's eligibility guideline</a>.
+Q(poverty): You probably qualify as indigent since you earn less than 150% of the poverty line. See <a href="https://www.federalregister.gov/documents/2018/01/18/2018-00814/annual-update-of-the-hhs-poverty-guidelines" target=_new>HI poverty guide</a> and <a href="https://www.capitol.hawaii.gov/hrscurrent/Vol14_Ch0701-0853/HRS0802/HRS_0802-.htm" target=_new>HRS § 802-4</a>.
+Q(nomore): I'm afraid there's nothing else I can help you with. I hope you have a nice day. If you would like a summary of our interview, click Yes.
+A[javascript:submit2('http://colarusso.pythonanywhere.com/','GET','','','','json_doc','_blank')]:Yes
