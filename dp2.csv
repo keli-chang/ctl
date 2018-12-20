@@ -1,0 +1,5 @@
+﻿call_id,surgery,take,sex,age (yrs.),time between injury & intake (yrs.),ankle,arm,elbow,eye,foot/feet,hand,hands,head,hip,neck,ankle,arm,elbow,eye,foot/feet,hand,hands,head,hip,neck,ankle,arm,elbow,eye,foot/feet,hand,hands,head,hip,neck,ankle,arm,elbow,eye,foot/feet,hand,hands,head,hip,neck,ankle,arm,elbow,eye,foot/feet,hand,hands,head,hip,neck,
+0,136,1,0,1,26,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1,137,1,0,0,45,2,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2,138,0,0,1,54,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+5,141,0,1,0,17,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
